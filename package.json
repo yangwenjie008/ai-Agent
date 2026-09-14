@@ -1,12 +1,18 @@
 {
   "name": "ai-agent",
-  "module": "index.ts",
-  "type": "module",
   "private": true,
-  "devDependencies": {
-    "@types/bun": "latest"
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "bun run --filter '@ai-agent/*' dev",
+    "build": "bun run --filter '@ai-agent/*' build",
+    "test": "bun run --filter '@ai-agent/*' test",
+    "lint": "bun run --filter '@ai-agent/*' lint",
+    "typecheck": "bun run --filter '@ai-agent/*' typecheck"
   },
-  "peerDependencies": {
-    "typescript": "^7"
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5.5.0"
   }
 }
